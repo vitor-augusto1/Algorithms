@@ -28,3 +28,11 @@ int binarySearch(int list[], int target, int arrayLength)
   return -1;
 }
 
+int main(void)
+{
+  int myArray[8] = { 10, 20, 30, 40, 100, 200, 500, 600 };
+  int myArrayLength = sizeof(myArray) / sizeof(myArray[0]);
+  printf("%d\n", binarySearch(myArray, 30, myArrayLength));
+  printf("%d\n", binarySearch(myArray, 2, myArrayLength));
+  return 0;
+}

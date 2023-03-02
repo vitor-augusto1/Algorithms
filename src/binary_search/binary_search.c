@@ -9,3 +9,22 @@
 // Input: arr[] = { 10, 20, 30, 40, 100, 200, 500, 100000 } target = 30
 // Output: 2
 
+int binarySearch(int list[], int target, int arrayLength)
+{
+  int lower = 0;
+  int higher = arrayLength - 1;
+  
+  while (lower <= higher) {
+    int middleValue = (lower + higher) / 2;
+    int guess = list[middleValue];
+    if (guess == target)
+      return middleValue;
+    if (guess > target)
+      higher = middleValue - 1;
+    else
+      lower = middleValue + 1;
+  }
+
+  return -1;
+}
+

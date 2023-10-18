@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 
-void swap_values(int *array, int i, int j)
+void swap_values(int *array, int left, int right)
 {
-  int temp_var = array[i];
-  array[i] = array[j];
-  array[j] = temp_var;
+  int temp_var = array[left];
+  array[left] = array[right];
+  array[right] = temp_var;
 }
 
 
@@ -14,6 +14,7 @@ void bubble_sort(int array[], int array_length)
   int i, j;
   for (i = 0; i < array_length - 1; i++) {
     for (j = 0; j < array_length - 1; j++) {
+      // If left is higher than right we swap 'em
       if (array[j] > array[j + 1])
         swap_values(array, j, j + 1);
     }
